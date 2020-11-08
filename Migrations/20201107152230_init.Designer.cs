@@ -9,7 +9,7 @@ using infolink.rect_asp_hr.Models;
 namespace rect_asp_hr.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20201106105158_init")]
+    [Migration("20201107152230_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,10 @@ namespace rect_asp_hr.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("avatar")
+                        .HasColumnName("avatar")
+                        .HasColumnType("text");
 
                     b.Property<string>("contactAddress")
                         .HasColumnName("contact_address")

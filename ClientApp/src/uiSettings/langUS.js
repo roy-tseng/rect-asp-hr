@@ -7,6 +7,9 @@ const UI_LANG_US = {
         TITLE_Add_BUTTON : "Increment",
         TITLE_Sub_BUTTON : "Decrement"
     },
+    Component_Login : {
+        TITLE_Login_BUTTON: "login",        
+    },
     General:{
         TITLE_CHANGE_LANG:"Change Language"
     }

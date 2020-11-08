@@ -22,7 +22,8 @@ namespace rect_asp_hr.Migrations
                     on_board_birth = table.Column<DateTime>(nullable: true),
                     contact_address = table.Column<string>(nullable: true),
                     mobile_phone = table.Column<string>(nullable: true),
-                    home_phone = table.Column<string>(nullable: true)
+                    home_phone = table.Column<string>(nullable: true),
+                    avatar = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

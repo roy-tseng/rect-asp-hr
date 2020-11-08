@@ -11,6 +11,9 @@ const UI_LANG_TW = {
         TITLE_START_BUTTON: "啟動",
         TITLE_SETUP_BUTTON: "設定",
     },
+    Component_Login : {
+        TITLE_Login_BUTTON: "登入",        
+    },
     General:{
         TITLE_CHANGE_LANG:"改變語系"
     }
