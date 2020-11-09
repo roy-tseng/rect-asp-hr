@@ -11,6 +11,8 @@ namespace infolink.rect_asp_hr.Models
     {
         public DbSet<Employee> Employee { get; set;}
 
+        public DbSet<Geneder> Gender {get; set;}
+
         public MySQLContext(DbContextOptions<MySQLContext> options) : base(options)
         {
         }

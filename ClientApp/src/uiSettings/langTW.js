@@ -14,6 +14,20 @@ const UI_LANG_TW = {
     Component_Login : {
         TITLE_Login_BUTTON: "登入",        
     },
+    Component_About : {
+        TITLE_DESCRIPTION : "聯騰自製"
+    },
+    Component_Employee : {
+        TITLE_NAME : "姓名",
+        TITLE_ID : "身份證號碼",
+        TITLE_HOME_PHONE : "家中的電話",
+        TITLE_MOBILE_PHONE : "行動電話",
+        TITLE_ADDRESS : "住址",
+        TITLE_BIRTHDAY : "生日",
+        TITLE_GENEDER : "性別",
+        TITLE_ONBOARD_DATE : "報到日期",
+        TITLE_AVATAR : "個人頭像",
+    },
     General:{
         TITLE_CHANGE_LANG:"改變語系"
     }

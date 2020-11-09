@@ -10,6 +10,9 @@ const UI_LANG_US = {
     Component_Login : {
         TITLE_Login_BUTTON: "login",        
     },
+    Component_About : {
+        TITLE_DESCRIPTION : "powered by INFOLINK"
+    },
     General:{
         TITLE_CHANGE_LANG:"Change Language"
     }
