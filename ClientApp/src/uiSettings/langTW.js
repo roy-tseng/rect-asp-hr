@@ -27,6 +27,8 @@ const UI_LANG_TW = {
         TITLE_GENEDER : "性別",
         TITLE_ONBOARD_DATE : "報到日期",
         TITLE_AVATAR : "個人頭像",
+        TITLE_BUTTON_UPDATE: "更新",
+        TITLE_BUTTON_ADD: "新增",
     },
     General:{
         TITLE_CHANGE_LANG:"改變語系"

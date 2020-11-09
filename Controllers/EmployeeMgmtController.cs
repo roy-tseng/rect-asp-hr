@@ -20,5 +20,18 @@ namespace rect_asp_hr.Controllers
         {
             return "hello";
         }        
+
+        [HttpPost]
+        [Route("Add")]
+        public ActionResult<string> Post([FromBody] Member member){
+            Console.WriteLine(member.name);
+            return member.name;
+        }
+    }
+
+    public class Member 
+    {
+        public string name {get; set;}= string.Empty;
+
     }
 }
