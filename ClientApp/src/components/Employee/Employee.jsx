@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Employee = () => {
 
-    const classes = useStyles();
-    const [name, setName]  = useState('');
-    const [info, SetInfo] = useState(null);
+    const classes              = useStyles();
+    const [name, setName]      = useState('');
+    const [info, SetInfo]      = useState(null);
     const [langPack, setLang]  = useState(useSelector(state => state.LangPack));
 
     useEffect(() =>{

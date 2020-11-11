@@ -6,12 +6,17 @@ namespace rect_asp_hr.Controllers
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
+    using infolink.rect_asp_hr.Models;
     
     [ApiController]
     [Route("[controller]")]
     public class EmployeeMgmtController : ControllerBase
     {
-        public EmployeeMgmtController(){
+        private MySQLContext context = null;
+
+        public EmployeeMgmtController(MySQLContext dbContext){
+
+            this.context = dbContext;
 
         }
 
@@ -23,15 +28,9 @@ namespace rect_asp_hr.Controllers
 
         [HttpPost]
         [Route("Add")]
-        public ActionResult<string> Post([FromBody] Member member){
+        public ActionResult<string> Post([FromBody] Employee member){
             Console.WriteLine(member.name);
             return member.name;
         }
-    }
-
-    public class Member 
-    {
-        public string name {get; set;}= string.Empty;
-
     }
 }
