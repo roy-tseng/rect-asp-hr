@@ -8,8 +8,7 @@ namespace rect_asp_hr
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.EntityFrameworkCore;
-    using MySQL.Data.EntityFrameworkCore;
-    using MySql.Data.EntityFrameworkCore.Extensions;
+    using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
     using infolink.rect_asp_hr.Models;
 
     public class Startup
@@ -34,7 +33,7 @@ namespace rect_asp_hr
             });
 
             string connectionString = Configuration.GetConnectionString("mysql");
-            services.AddDbContext<MySQLContext>(options => options.UseMySQL(connectionString));
+            services.AddDbContext<MySQLContext>(options => options.UseMySql(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
