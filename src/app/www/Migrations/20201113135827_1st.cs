@@ -12,9 +12,7 @@ namespace rect_asp_hr.Migrations
                 name: "Employee",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    working_number = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    working_number = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: false),
                     name = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     national_id = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     gender = table.Column<bool>(type: "tinyint(1)", nullable: false),
@@ -23,11 +21,13 @@ namespace rect_asp_hr.Migrations
                     contact_address = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     mobile_phone = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     home_phone = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    avatar = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
+                    avatar = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    create_time = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    update_time = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employee", x => x.id);
+                    table.PrimaryKey("PK_Employee", x => x.working_number);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,6 +36,7 @@ namespace rect_asp_hr.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    code = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     type = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },
                 constraints: table =>

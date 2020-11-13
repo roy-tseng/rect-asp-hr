@@ -1,24 +1,38 @@
 
 namespace TestDBHelper
 {
+    using System.IO;
     using NUnit.Framework;
     using INFOLINK.DBHelper;
 
     public class Tests
     {
-        private ISeedHandler seedHandler {get; set;} = null;
+        private SeedHandler seedHandler {get; set;} = null;
+
+        private string source = string.Empty;
 
         [SetUp]
         public void Setup()
         {
-            this.seedHandler = new ExcelSeedHandler();
+            string connectionString = "server=localhost;port=3308;database=hr;user id=root;password=root";
+            this.source = "hr.xlsx";
+            this.seedHandler = new ExcelSeedHandler(connectionString, source);
         }
 
         [Test]
-        public void Test1()
+        public void Test_Pass_DumpDataToDB()
         {
-            Assert.IsTrue(this.seedHandler.DumpDataToDB(string.Empty));
-            Assert.Pass();
+            int effectedRow = 0;
+            Assert.IsTrue(File.Exists(this.source));
+            Assert.IsTrue(this.seedHandler.DumpDataToDB("Employee", true, out effectedRow));
+            Assert.IsTrue(this.seedHandler.CloseConnection());
+        }
+
+        [Test]
+        public void Test_Pass_DBConnection()
+        {
+            Assert.IsTrue(this.seedHandler.OpenDBConnection());
+            Assert.IsTrue(this.seedHandler.CloseConnection());
         }
     }
 }

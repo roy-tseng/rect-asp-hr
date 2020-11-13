@@ -4,4 +4,20 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.0" />
+    <PackageReference Include="MySqlConnector" Version="1.1.0" />
+    <PackageReference Include="NPOI" Version="2.5.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0-alpha.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Logger\Logger.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -9,10 +9,11 @@ namespace infolink.rect_asp_hr.Models
     [Table("Employee")]
     public class Employee
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key, Column(Order = 0)]
-        public int id {get; set;}
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Column(Order = 0)]
+        //public int id {get; set;}
 
+        [Key]
         [Column("working_number")]
         public string workingNumber {get; set;}
 
@@ -42,5 +43,11 @@ namespace infolink.rect_asp_hr.Models
 
         [Column("avatar")]
         public string avatar { get; set; }
+
+        [Column("create_time")]
+        public Nullable<DateTime> createTime { get; set; }
+
+        [Column("update_time")]
+        public Nullable<DateTime> updateTime { get; set; }
     }
 }

@@ -11,8 +11,11 @@ namespace infolink.rect_asp_hr.Models
         [Key, Column(Order = 0)]
         public int Id {get; set;}
 
+        [Column("code")]
+        public string code { get; set; }
+
         [Column("type")]
-        public string Type {get; set;}
+        public string name {get; set;}
     }
 
 }

@@ -19,9 +19,9 @@ namespace rect_asp_hr.Migrations
 
             modelBuilder.Entity("infolink.rect_asp_hr.Models.Employee", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("workingNumber")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
+                        .HasColumnName("working_number");
 
                     b.Property<string>("avatar")
                         .HasColumnType("longtext CHARACTER SET utf8mb4")
@@ -30,6 +30,10 @@ namespace rect_asp_hr.Migrations
                     b.Property<string>("contactAddress")
                         .HasColumnType("longtext CHARACTER SET utf8mb4")
                         .HasColumnName("contact_address");
+
+                    b.Property<DateTime?>("createTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("create_time");
 
                     b.Property<DateTime?>("dateBirth")
                         .HasColumnType("datetime(6)")
@@ -59,11 +63,11 @@ namespace rect_asp_hr.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4")
                         .HasColumnName("national_id");
 
-                    b.Property<string>("workingNumber")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
-                        .HasColumnName("working_number");
+                    b.Property<DateTime?>("updateTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("update_time");
 
-                    b.HasKey("id");
+                    b.HasKey("workingNumber");
 
                     b.ToTable("Employee");
                 });
@@ -74,7 +78,11 @@ namespace rect_asp_hr.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("code")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnName("code");
+
+                    b.Property<string>("name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4")
                         .HasColumnName("type");
 
