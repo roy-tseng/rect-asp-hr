@@ -13,6 +13,8 @@ namespace rect_asp_hr
 
     public class Startup
     {
+        private readonly string corsPolicy = "CorsPolicy";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +36,7 @@ namespace rect_asp_hr
 
             string connectionString = Configuration.GetConnectionString("mysql");
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connectionString));
+            this.EnableCORS(services);         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +56,7 @@ namespace rect_asp_hr
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
+            app.UseCors(this.corsPolicy);
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -67,10 +70,24 @@ namespace rect_asp_hr
             {
                 spa.Options.SourcePath = "ClientApp";
 
+                spa.ApplicationBuilder.UseCors(this.corsPolicy);
+
                 if (env.IsDevelopment())
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+            });
+        }
+
+        private void EnableCORS(IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                // CorsPolicy 是自訂的 Policy 名稱
+                options.AddPolicy(this.corsPolicy, policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
+                });
             });
         }
     }

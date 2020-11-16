@@ -13,6 +13,10 @@ const UI_LANG_US = {
     Component_About : {
         TITLE_DESCRIPTION : "powered by INFOLINK"
     },
+    Component_Liner : {
+        TITLE_MESSAGE : "Message",
+        TITLE_BUTTON_SEND: "Notify"
+    },
     General:{
         TITLE_CHANGE_LANG:"Change Language"
     }

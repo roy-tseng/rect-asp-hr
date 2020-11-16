@@ -30,6 +30,10 @@ const UI_LANG_TW = {
         TITLE_BUTTON_UPDATE: "更新",
         TITLE_BUTTON_ADD: "新增",
     },
+    Component_Liner : {
+        TITLE_MESSAGE : "訊息",
+        TITLE_BUTTON_SEND: "通知"
+    },
     General:{
         TITLE_CHANGE_LANG:"改變語系"
     }
