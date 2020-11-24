@@ -36,6 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Logger\Logger.csproj" />
     <ProjectReference Include="..\ServiceLibs\LineNotifyHelper\LineNotifyHelper.csproj" />
+    <ProjectReference Include="..\Common\JWTHelper\JWTHelper.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -23,7 +23,7 @@ namespace rect_asp_hr.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("~/weathers")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
